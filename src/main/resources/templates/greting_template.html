@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+	<title>Eolo Parks</title>
+</head>
+<body>
+    <h1>Eolo Parks</h1>
+    <form action="/search" method="get">
+        <label for="city">Buscar por ciudad:</label>
+        <input type="text" id="city" name="city">
+        <button type="submit">Buscar</button>
+    </form>
+    {{#eoloparks}}
+    <div>
+        <h2>{{name}}</h2>
+        <p>ciudad: {{city}}</p>
+    </div>
+    {{/eoloparks}}
+	<a href="/new_eolopark">Create New EoloPark</a>
+</body>
+</html>
