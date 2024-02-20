@@ -7,6 +7,12 @@
 </head>
 <body>
     <h1>Create New EoloPark</h1>
+    <!-- Agregar el formulario para crear un nuevo parque aquí -->
+
+    {{#error}}
+    <p style="color: red;">{{error}}</p>
+    {{/error}}
+
     <form action="/create_eolopark" method="post">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br>
