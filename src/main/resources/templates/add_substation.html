@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Substation</title>
+</head>
+<body>
+    <h1>Add Substation to {{ parkName }}</h1>
+    <form action="/add_substation_submit" method="post">
+        <input type="hidden" name="parkName" value="{{ parkName }}">
+        <label for="substationModel">Substation Model:</label>
+        <input type="text" id="substationModel" name="substationModel" required><br>
+        <label for="SubstationPower">Power:</label>
+        <input type="text" id="SubstationPower" name="SubstationPower" required><br>
+        <label for="SubstationVoltaje">Voltaje:</label>
+        <input type="text" id="SubstationVoltaje" name="SubstationVoltaje" required><br>
+        <input type="submit" value="Add Substation">
+    </form>
+</body>
+</html>

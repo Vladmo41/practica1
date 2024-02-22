@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Aerogenerator</title>
+</head>
+<body>
+    <h1>Add Aerogenerator to {{ parkName }}</h1>
+    <form action="/add_aerogenerator_submit" method="post">
+        <input type="hidden" name="parkName" value="{{ parkName }}">
+        <label for="aerogeneratorID">Aerogenerator ID:</label>
+        <input type="text" id="aerogeneratorID" name="aerogeneratorID" required><br>
+        <label for="aerogeneratorLatitude">Latitude:</label>
+        <input type="text" id="aerogeneratorLatitude" name="aerogeneratorLatitude" required><br>
+        <label for="aerogeneratorLongitude">Longitude:</label>
+        <input type="text" id="aerogeneratorLongitude" name="aerogeneratorLongitude" required><br>
+        <label for="aerogeneratorLength">Length:</label>
+        <input type="text" id="aerogeneratorLength" name="aerogeneratorLength" required><br>
+        <label for="aerogeneratorHeight">Height:</label>
+        <input type="text" id="aerogeneratorHeight" name="aerogeneratorHeight" required><br>
+        <label for="aerogeneratorPower">Power:</label>
+        <input type="text" id="aerogeneratorPower" name="aerogeneratorPower" required><br>
+        <input type="submit" value="Add Aerogenerator">
+    </form>
+</body>
+</html>

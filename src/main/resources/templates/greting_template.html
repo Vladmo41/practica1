@@ -11,8 +11,8 @@
     </form>
     {{#eoloparks}}
     <div>
-        <h2>{{name}}</h2>
-        <p>ciudad: {{city}}</p>
+    <a href="/show_eolopark?name={{name}}"><h2>{{name}}</h2></a>
+    <p>ciudad: {{city}}</p>
     </div>
     {{/eoloparks}}
 	<a href="/new_eolopark">Create New EoloPark</a>
