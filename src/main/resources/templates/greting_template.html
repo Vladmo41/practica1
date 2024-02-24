@@ -1,20 +1,43 @@
 <!DOCTYPE html>
+<style>
+    title{
+        font-size: 36px;
+        color: #000;
+        font-family: 'Open Sans';
+        background-color: #0059ff;
+    }
+
+    #boton {
+        background-color: #0059ff;
+        color: #fff;
+        width: 100px;
+        padding: 20px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        }
+</style>
+
 <head>
-	<title>Parques Eolicos</title>
+    <center>
+        <title>Parques Eólicos</title>
+    </center>
 </head>
+
 <body>
-    <h1>Parques Eólicos</h1>
-    <form action="/search" method="get">
-        <label for="city">Buscar por ciudad:</label>
-        <input type="text" id="city" name="city">
-        <button type="submit">Buscar</button>
-    </form>
-    {{#eoloparks}}
-    <div>
-    <a href="/show_eolopark?name={{name}}"><h2>{{name}}</h2></a>
-    <p>ciudad: {{city}}</p>
-    </div>
-    {{/eoloparks}}
-	<a href="/new_eolopark">Create New EoloPark</a>
+    <center>
+        <h1>Parques Eólicos</h1>
+        <form action="/search" method="get">
+            <label for="city">Buscar por ciudad:</label>
+            <input type="text" id="city" name="city">
+            <button type="submit">Buscar</button>
+        </form>
+        {{#eoloparks}}
+        <div>
+        <a href="/show_eolopark?name={{name}}"><h2>{{name}}</h2></a>
+        <p>ciudad: {{city}}</p>
+        </div>
+        {{/eoloparks}}
+        <a href="/new_eolopark">Crear nuevo EoloPark</a>
+    </center>
 </body>
 </html>

@@ -1,58 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show EoloPark Details</title>
+    <center>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Show EoloPark Details</title>
+    </center>
 </head>
+
 <body>
-    <h1>Details of {{eolopark.name}}</h1>
-    <p>City: {{eolopark.city}}</p>
-	<p>Latitude: {{eolopark.latitude}}</p>
-	<p>Longitude: {{eolopark.longitude}}</p>
-	<p>Terrain: {{eolopark.terrain}}</p>
-	<p>Area: {{eolopark.terrain}}</p>
+    <center>
+        <h1>Details of {{eolopark.name}}</h1>
+        <p>City: {{eolopark.city}}</p>
+        <p>Latitude: {{eolopark.latitude}}</p>
+        <p>Longitude: {{eolopark.longitude}}</p>
+        <p>Terrain: {{eolopark.terrain}}</p>
+        <p>Area: {{eolopark.terrain}}</p>
 
-    <h2>Aerogenerators</h2>
-{{#eolopark.generatorList}}
-<ul>
-    <li>ID: {{iD}}</li>
-    <li>Latitude: {{latitude}}</li>
-    <li>Longitude: {{longitude}}</li>
-    <li>Length: {{length}}</li>
-    <li>Height: {{height}}</li>
-    <li>Power: {{power}}</li>
-</ul>
-{{/eolopark.generatorList}}
-{{^eolopark.generatorList}}
-<p>No hay aerogeneradores en este parque.</p>
-{{/eolopark.generatorList}}
+        <h2>Aerogenerators</h2>
+        {{#eolopark.generatorList}}
+        <ul>
+            <li>ID: {{iD}}</li>
+            <li>Latitude: {{latitude}}</li>
+            <li>Longitude: {{longitude}}</li>
+            <li>Length: {{length}}</li>
+            <li>Height: {{height}}</li>
+            <li>Power: {{power}}</li>
+        </ul>
+        
+        {{/eolopark.generatorList}}
+        {{^eolopark.generatorList}}
+        <p>No hay aerogeneradores en este parque.</p>
+        {{/eolopark.generatorList}}
 
-    <h3>Substation:</h3>
-        {{#eolopark.substation}}
-        <p>Model: {{model}}</p>
-        <p>Power: {{power}}</p>
-        <p>Voltage: {{voltaje}}</p>
-    {{/eolopark.substation}}
+        <h3>Substation:</h3>
+            {{#eolopark.substation}}
+            <p>Model: {{model}}</p>
+            <p>Power: {{power}}</p>
+            <p>Voltage: {{voltaje}}</p>
+        {{/eolopark.substation}}
 
-    <form action="/add_aerogenerator" method="post">
-        <input type="hidden" name="parkName" value="{{eolopark.name}}">
-        <button type="submit">Agregar Aerogenerador</button>
-    </form>
+        <form action="/add_aerogenerator" method="post">
+            <input type="hidden" name="parkName" value="{{eolopark.name}}">
+            <button type="submit">Agregar Aerogenerador</button>
+        </form>
 
-    <form action="/add_substation" method="post">
-        <input type="hidden" name="parkName" value="{{eolopark.name}}">
-        <button type="submit">Agregar Subestación</button>
-    </form>
+        <form action="/add_substation" method="post">
+            <input type="hidden" name="parkName" value="{{eolopark.name}}">
+            <button type="submit">Agregar Subestación</button>
+        </form>
 
-    <form action="/modify_eolopark" method="post">
-        <input type="hidden" name="parkName" value="{{eolopark.name}}">
-        <button type="submit">Modificar Parque</button>
-    </form>
+        <form action="/modify_eolopark" method="post">
+            <input type="hidden" name="parkName" value="{{eolopark.name}}">
+            <button type="submit">Modificar Parque</button>
+        </form>
 
-    <form action="/delete_eolopark" method="post">
-        <input type="hidden" name="parkName" value="{{eolopark.name}}">
-        <button type="submit">Eliminar Parque</button>
-    </form>
-</body>
+        <form action="/delete_eolopark" method="post">
+            <input type="hidden" name="parkName" value="{{eolopark.name}}">
+            <button type="submit">Eliminar Parque</button>
+        </form>
+    </body>
+</center>
 </html>

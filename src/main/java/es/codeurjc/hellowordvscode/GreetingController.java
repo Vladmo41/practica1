@@ -2,6 +2,7 @@ package es.codeurjc.hellowordvscode;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,13 +11,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class GreetingController {
+    @Autowired
+    EoloParkRepository aiba;
+
+
 
     private ArrayList<EoloPark> eoloparks = new ArrayList<>();
     private ArrayList<Aerogenerator> a1top1 = new ArrayList<>();
     private Substation s1 = new Substation("ab",1,2);
 
     public GreetingController(){
-
+        
         Aerogenerator a1 = new Aerogenerator("123",1,2,3,4,5 );
         Aerogenerator a2 = new Aerogenerator("234",1,2,3,4,5);
         a1top1.add(a1);
@@ -24,6 +29,9 @@ public class GreetingController {
         eoloparks.add(new EoloPark("Parque 1", "Madrid", 10, 100, 1, "e",null, a1top1));
         eoloparks.add(new EoloPark("Parque 2", "Barcelona", 20, 200, 2, "j", s1, a1top1));
         eoloparks.add(new EoloPark("Parque 3", "Madrid", 20, 200, 2, "j", null, null));
+        aiba.save(new EoloPark("Parque 1", "Madrid", 10, 100, 1, "e",null, a1top1));
+        aiba.save(new EoloPark("Parque 2", "Barcelona", 20, 200, 2, "j", s1, a1top1));
+        aiba.save(new EoloPark("Parque 3", "Madrid", 20, 200, 2, "j", null, null));
     }
 
     @GetMapping("/greeting")

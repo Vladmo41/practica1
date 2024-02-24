@@ -1,15 +1,25 @@
 package es.codeurjc.hellowordvscode;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Aerogenerator {
-    private String iD;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    private String iD2;
     private double latitude;
     private double longitude;
     private int length;
     private int height;
     private double power;
-    public Aerogenerator(String iD,double latitude,double longitude,int length,int height,double power){
+    public Aerogenerator(String iD2,double latitude,double longitude,int length,int height,double power){
 
-        this.iD=iD;
+        this.iD2=iD2;
         this.latitude=latitude;
         this.longitude=longitude;
         this.length=length;
@@ -18,12 +28,15 @@ public class Aerogenerator {
 
         
     }
-
-    public String getID(){
-        return iD;
+    public Aerogenerator() {
+        
     }
-    public void setID(String n){
-        iD=n;
+
+    public String getID2(){
+        return iD2;
+    }
+    public void setID2(String n){
+        iD2=n;
     }
     public double getlatitude(){
         return latitude;
